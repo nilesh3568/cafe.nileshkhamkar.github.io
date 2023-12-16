@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Cafe Billing System</title>
+  <link rel="icon" href="photos/tea3.PNG">
+  <!-------------------------- Online External Links --------------------->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!---------------------------------------------------------------------->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+  <!-- loder -->
+    <div class="loader bg-dark" id="loader">
+        <img src="photos/cup.GIF" alt="Loader Image">
+    </div>
+
+  <!-- First Row -->
+    <div class="row ">
+      <div class="col-md-12 firstRow">
+      <h4 class="text-center cafeTitle p-1 mt-2">CAFE BILLING SYSTEM</h4>
+      <div class="row dateTime">
+        <div class="col-md-6">
+          <p class="date" id="dayDate"></p>
+        </div>
+        <div class="col-md-6">
+          <p class="time" id="liveTime"></p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="row p-3 shadow second-row">
+      <div class="col-md-12">
+        <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-table1" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Table No-1</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link " id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-table2" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Table No-2</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-table3" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Table No-3</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-table4" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Table No-4</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-table5" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Table No-5</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-table6" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Table No-6</button>
+          </li>
+      </ul>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Third Row -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-table1" role="tabpanel" aria-labelledby="pills-home-tab">
+              <h5 class="text-center p-4 tableNumber">Table No-1</h5>
+                  <div class="col-md-11 itemsTable">
+                  <!-- <h4 class="text-center p-2">Our Products</h4> -->
+                  <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                            Coffee
+                          </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse show" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row" id="itemList">
+                                <div class="col mb-3 text-center">
+                                <img src="photos/tea1.PNG" alt="Milk Tea" class="img-fluid" onclick="addItem('Milk Tea', 40.00)">Milk Tea
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/tea2.PNG" alt="Green Tea" class="img-fluid" onclick="addItem('Green Tea', 40.00)">Green Tea
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/tea3.PNG" alt="Coffee" class="img-fluid" onclick="addItem('Coffee', 50.00)">Coffee
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/tea4.PNG" alt="Printed Coffee" class="img-fluid" onclick="addItem('Printed Coffee', 70.00)">Printed Coffee
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/tea5.PNG" alt="Cold Coffee" class="img-fluid" onclick="addItem('Cold Coffee', 80.00)">Cold Coffee
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Pizzas
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row" id="itemList">
+                              <div class="col mb-3 text-center">
+                                <img src="photos/pizza4.PNG" alt="Olive Mixed Pizza" class="img-fluid" onclick="addItem('Olive Mixed Pizza', 80.00)">Olive Mixed Pizza
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/pizza5.PNG" alt="Mixed Pizza" class="img-fluid" onclick="addItem('Mixed Pizza', 70.00)">Mixed Pizza
+                              </div>
+                              <div class="col mb-3 text-center"> 
+                                <img src="photos/pizza1.PNG" alt="Cheese Pizza" class="img-fluid" onclick="addItem('Cheese Pizza', 100.00)">Cheese Pizza
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/pizza9.PNG" alt="Cartoon Pizza" class="img-fluid" onclick="addItem('Cartoon Pizza', 60.00)">Cartoon Pizza
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/pizza3.PNG" alt="Yummy French Pizza" class="img-fluid" onclick="addItem('Yummy French Pizza', 90.00)">Yummy French Pizza
+                              </div>
+                              <!-- Add more items as needed -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Cold Drinks
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row" id="itemList">
+                                <div class="col mb-3 text-center">
+                                <img src="photos/cold1.PNG" alt="Bisleri Bottle" class="img-fluid" onclick="addItem('Bisleri Bottle', 15.00)">Bisleri Bottle
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/cold2.PNG" alt="Sprite" class="img-fluid" onclick="addItem('Sprite', 20.00)">Sprite
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/cold3.PNG" alt="Pepsi" class="img-fluid" onclick="addItem('Pepsi', 20.00)">Pepsi
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/cold4.PNG" alt="Chocobar" class="img-fluid" onclick="addItem('Chocobar', 30.00)">Chocobar
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/cold5.PNG" alt="Orange Juice" class="img-fluid" onclick="addItem('Orange Juice', 40.00)">Orange Juice
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Burger
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row" id="itemList">
+                                <div class="col mb-3 text-center">
+                                <img src="photos/burger1.PNG" alt="Hamburger" class="img-fluid" onclick="addItem('Hamburger', 40.00)">Hamburger
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/burger2.PNG" alt="Lunch Burger" class="img-fluid" onclick="addItem('Lunch Burger', 50.00)">Lunch Burger
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/burger3.PNG" alt="Cheese Burger" class="img-fluid" onclick="addItem('Cheese Burger', 50.00)">Cheese Burger
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/burger5.PNG" alt="Salad" class="img-fluid" onclick="addItem('Salad', 30.00)">Salad
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/burger4.PNG" alt="Sandwich" class="img-fluid" onclick="addItem('Sandwich', 50.00)">Sandwich
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Ice Creams
+                          </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row" id="itemList">
+                                <div class="col mb-3 text-center">
+                                <img src="photos/ice1.PNG" alt="Vanilla Ice Cream" class="img-fluid" onclick="addItem('Vanilla Ice Cream', 80.00)">Vanilla Ice Cream
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/ice2.PNG" alt="Ice Cream" class="img-fluid" onclick="addItem('Ice Cream', 80.00)">Ice Cream
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/ice3.PNG" alt="Strawberry Ice Cream" class="img-fluid" onclick="addItem('Strawberry Ice Cream', 80.00)">Strawberry Ice Cream
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/ice4.PNG" alt="Mixed Ice Cream" class="img-fluid" onclick="addItem('Mixed Ice Cream', 80.00)">Mixed Ice Cream
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/ice5.PNG" alt="Chocolete Ice Cream" class="img-fluid" onclick="addItem('Chocolete Ice Cream', 60.00)">Chocolete Ice Cream
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Cakes
+                          </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row" id="itemList">
+                                <div class="col mb-3 text-center">
+                                <img src="photos/cake1.PNG" alt="Pineapple Cake" class="img-fluid" onclick="addItem('Pineapple Cake', 250.00)">Pineapple Cake
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/cake2.GIF" alt="Butter Scrunch Cake" class="img-fluid" onclick="addItem('Butter Scrunch Cake', 350.00)">Butter Scrunch Cake
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/cake3.PNG" alt="Chocolete Cake " class="img-fluid" onclick="addItem('Chocolete Cake', 240.00)">Chocolete Cake 
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/cake4.PNG" alt="Cup Cake" class="img-fluid" onclick="addItem('Cup Cake', 120.00)">Cup Cake
+                              </div>
+                              <div class="col mb-3 text-center">
+                                <img src="photos/cake5.GIF" alt="Dark Chocolete Cake" class="img-fluid" onclick="addItem('Dark Chocolete Cake', 420.00)">Dark Chocolete Cake
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                </div>
+
+          <!-- Selected Items and Total -->
+                  <div class="col-md-11 invoicePart mb-4">
+                    <h4 class="text-center mt-4 p-2 invoiceName">Invoice</h4>
+                    <table class="table table-hover table-striped">
+                      <thead>
+                        <tr>
+                          <th>Item</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th class="action-button">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="billTableBody"></tbody>
+                    </table>
+
+                    <h5 class="text-start p-3 total">Total : ₹ &nbsp<span id="totalAmount"> 0.00</span></h5>
+
+                    <button class="btn btn-primary action-btn" onclick="printBill()">Print</button>
+                    <button class="btn btn-danger action-btn" onclick="deleteAllItems()">Delete All Items</button>
+                  </div>
+                <h6 class="endMessage text-center">Thank You... Visit Again...</h6>
+            </div>
+
+
+<!-- Table 2 starts here -->
+
+    <div class="tab-pane fade" id="pills-table2" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <h5 class="text-center p-4 tableNumber">Table No-2</h5>
+            <div class="col-md-11 itemsTable">
+              <!-- <h4 class="text-center p-2">Our Products</h4> -->
+              <div class="accordion" id="accordionExample1">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix1" aria-expanded="true" aria-controls="collapseSix1">
+                      Coffee
+                    </button>
+                  </h2>
+                  <div id="collapseSix1" class="accordion-collapse collapse show" aria-labelledby="headingSix1" data-bs-parent="#accordionExample1">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea1.PNG" alt="Milk Tea" class="img-fluid" onclick="addItem1('Milk Tea', 40.00)">Milk Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea2.PNG" alt="Green Tea" class="img-fluid" onclick="addItem1('Green Tea', 40.00)">Green Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea3.PNG" alt="Coffee" class="img-fluid" onclick="addItem1('Coffee', 50.00)">Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea4.PNG" alt="Printed Coffee" class="img-fluid" onclick="addItem1('Printed Coffee', 70.00)">Printed Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea5.PNG" alt="Cold Coffee" class="img-fluid" onclick="addItem1('Cold Coffee', 80.00)">Cold Coffee
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">
+                      Pizzas
+                    </button>
+                  </h2>
+                  <div id="collapseOne1" class="accordion-collapse collapse" aria-labelledby="headingOne1" data-bs-parent="#accordionExample1">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                        <div class="col mb-3 text-center">
+                          <img src="photos/pizza4.PNG" alt="Olive Mixed Pizza" class="img-fluid" onclick="addItem1('Olive Mixed Pizza', 80.00)">Olive Mixed Pizza
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/pizza5.PNG" alt="Mixed Pizza" class="img-fluid" onclick="addItem1('Mixed Pizza', 70.00)">Mixed Pizza
+                        </div>
+                        <div class="col mb-3 text-center"> 
+                          <img src="photos/pizza1.PNG" alt="Cheese Pizza" class="img-fluid" onclick="addItem1('Cheese Pizza', 100.00)">Cheese Pizza
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/pizza9.PNG" alt="Cartoon Pizza" class="img-fluid" onclick="addItem1('Cartoon Pizza', 60.00)">Cartoon Pizza
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/pizza3.PNG" alt="Yummy French Pizza" class="img-fluid" onclick="addItem1('Yummy French Pizza', 90.00)">Yummy French Pizza
+                        </div>
+                        <!-- Add more items as needed -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+                      Cold Drinks
+                    </button>
+                  </h2>
+                  <div id="collapseTwo1" class="accordion-collapse collapse" aria-labelledby="headingTwo1" data-bs-parent="#accordionExample1">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cold1.PNG" alt="Bisleri Bottle" class="img-fluid" onclick="addItem1('Bisleri Bottle', 15.00)">Bisleri Bottle
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cold2.PNG" alt="Sprite" class="img-fluid" onclick="addItem1('Sprite', 20.00)">Sprite
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cold3.PNG" alt="Pepsi" class="img-fluid" onclick="addItem1('Pepsi', 20.00)">Pepsi
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cold4.PNG" alt="Chocobar" class="img-fluid" onclick="addItem1('Chocobar', 30.00)">Chocobar
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cold5.PNG" alt="Orange Juice" class="img-fluid" onclick="addItem1('Orange Juice', 40.00)">Orange Juice
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
+                      Burger
+                    </button>
+                  </h2>
+                  <div id="collapseThree1" class="accordion-collapse collapse" aria-labelledby="headingThree1" data-bs-parent="#accordionExample1">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger1.PNG" alt="Hamburger" class="img-fluid" onclick="addItem1('Hamburger', 40.00)">Hamburger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger2.PNG" alt="Lunch Burger" class="img-fluid" onclick="addItem1('Lunch Burger', 50.00)">Lunch Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger3.PNG" alt="Cheese Burger" class="img-fluid" onclick="addItem1('Cheese Burger', 50.00)">Cheese Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger5.PNG" alt="Salad" class="img-fluid" onclick="addItem1('Salad', 30.00)">Salad
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger4.PNG" alt="Sandwich" class="img-fluid" onclick="addItem1('Sandwich', 50.00)">Sandwich
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour1" aria-expanded="false" aria-controls="collapseFour1">
+                      Ice Creams
+                    </button>
+                  </h2>
+                  <div id="collapseFour1" class="accordion-collapse collapse" aria-labelledby="headingFour1" data-bs-parent="#accordionExample1">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice1.PNG" alt="Vanilla Ice Cream" class="img-fluid" onclick="addItem1('Vanilla Ice Cream', 80.00)">Vanilla Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice2.PNG" alt="Ice Cream" class="img-fluid" onclick="addItem1('Ice Cream', 80.00)">Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice3.PNG" alt="Strawberry Ice Cream" class="img-fluid" onclick="addItem1('Strawberry Ice Cream', 80.00)">Strawberry Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice4.PNG" alt="Mixed Ice Cream" class="img-fluid" onclick="addItem1('Mixed Ice Cream', 80.00)">Mixed Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice5.PNG" alt="Chocolete Ice Cream" class="img-fluid" onclick="addItem1('Chocolete Ice Cream', 60.00)">Chocolete Ice Cream
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive1" aria-expanded="false" aria-controls="collapseFive1">
+                      Cakes
+                    </button>
+                  </h2>
+                  <div id="collapseFive1" class="accordion-collapse collapse" aria-labelledby="headingFive1" data-bs-parent="#accordionExample1">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake1.PNG" alt="Pineapple Cake" class="img-fluid" onclick="addItem1('Pineapple Cake', 250.00)">Pineapple Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake2.GIF" alt="Butter Scrunch Cake" class="img-fluid" onclick="addItem1('Butter Scrunch Cake', 350.00)">Butter Scrunch Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake3.PNG" alt="Chocolete Cake " class="img-fluid" onclick="addItem1('Chocolete Cake', 240.00)">Chocolete Cake 
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake4.PNG" alt="Cup Cake" class="img-fluid" onclick="addItem1('Cup Cake', 120.00)">Cup Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake5.GIF" alt="Dark Chocolete Cake" class="img-fluid" onclick="addItem1('Dark Chocolete Cake', 420.00)">Dark Chocolete Cake
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Repeat similar modifications for other sections -->
+              </div>
+            </div>
+
+            <!-- Selected Items and Total -->
+            <div class="col-md-11 invoicePart mb-4">
+              <h4 class="text-center mt-4 p-2 invoiceName">Invoice</h4>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th class="action-button">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="billTableBody1"></tbody>
+              </table>
+
+              <h5 class="text-start p-3 total">Total : ₹ &nbsp<span id="totalAmount1"> 0.00</span></h5>
+
+              <button class="btn btn-primary action-btn" onclick="printBill1()">Print</button>
+              <button class="btn btn-danger action-btn" onclick="deleteAllItems1()">Delete All Items</button>
+            </div>
+          <h6 class="endMessage text-center">Thank You... Visit Again...</h6>
+    </div>
+
+
+
+
+
+
+    <!-- Table 3 starts here -->
+    <div class="tab-pane fade" id="pills-table3" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <h5 class="text-center p-4 tableNumber">Table No-3</h5>
+              <div class="col-md-11 itemsTable">
+                <!-- <h4 class="text-center p-2">Our Products</h4> -->
+                <div class="accordion" id="accordionExample2">
+                  <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix2">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix2" aria-expanded="true" aria-controls="collapseSix2">
+                      Coffee
+                    </button>
+                  </h2>
+                  <div id="collapseSix2" class="accordion-collapse collapse show" aria-labelledby="headingSix2" data-bs-parent="#accordionExample2">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/tea1.PNG" alt="Milk Tea" class="img-fluid" onclick="addItem2('Milk Tea', 40.00)">Milk Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea2.PNG" alt="Green Tea" class="img-fluid" onclick="addItem2('Green Tea', 40.00)">Green Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea3.PNG" alt="Coffee" class="img-fluid" onclick="addItem2('Coffee', 50.00)">Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea4.PNG" alt="Printed Coffee" class="img-fluid" onclick="addItem2('Printed Coffee', 70.00)">Printed Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea5.PNG" alt="Cold Coffee" class="img-fluid" onclick="addItem2('Cold Coffee', 80.00)">Cold Coffee
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne2">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                        Pizzas
+                      </button>
+                    </h2>
+                    <div id="collapseOne2" class="accordion-collapse collapse" aria-labelledby="headingOne2" data-bs-parent="#accordionExample2">
+                      <div class="accordion-body">
+                        <div class="row" id="itemList2">
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza4.PNG" alt="Olive Mixed Pizza" class="img-fluid" onclick="addItem2('Olive Mixed Pizza', 80.00)">Olive Mixed Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza5.PNG" alt="Mixed Pizza" class="img-fluid" onclick="addItem2('Mixed Pizza', 70.00)">Mixed Pizza
+                          </div>
+                          <div class="col mb-3 text-center"> 
+                            <img src="photos/pizza1.PNG" alt="Cheese Pizza" class="img-fluid" onclick="addItem2('Cheese Pizza', 100.00)">Cheese Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza9.PNG" alt="Cartoon Pizza" class="img-fluid" onclick="addItem2('Cartoon Pizza', 60.00)">Cartoon Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza3.PNG" alt="Yummy French Pizza" class="img-fluid" onclick="addItem2('Yummy French Pizza', 90.00)">Yummy French Pizza
+                          </div>
+                          <!-- Add more items as needed -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo2">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                        Cold Drinks
+                      </button>
+                    </h2>
+                    <div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo2" data-bs-parent="#accordionExample2">
+                      <div class="accordion-body">
+                        <div class="row" id="itemList2">
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold1.PNG" alt="Bisleri Bottle" class="img-fluid" onclick="addItem2('Bisleri Bottle', 15.00)">Bisleri Bottle
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold2.PNG" alt="Sprite" class="img-fluid" onclick="addItem2('Sprite', 20.00)">Sprite
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold3.PNG" alt="Pepsi" class="img-fluid" onclick="addItem2('Pepsi', 20.00)">Pepsi
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold4.PNG" alt="Chocobar" class="img-fluid" onclick="addItem2('Chocobar', 30.00)">Chocobar
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold5.PNG" alt="Orange Juice" class="img-fluid" onclick="addItem2('Orange Juice', 40.00)">Orange Juice
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
+                      Burger
+                    </button>
+                  </h2>
+                  <div id="collapseThree2" class="accordion-collapse collapse" aria-labelledby="headingThree2" data-bs-parent="#accordionExample2">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/burger1.PNG" alt="Hamburger" class="img-fluid" onclick="addItem2('Hamburger', 40.00)">Hamburger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger2.PNG" alt="Lunch Burger" class="img-fluid" onclick="addItem2('Lunch Burger', 50.00)">Lunch Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger3.PNG" alt="Cheese Burger" class="img-fluid" onclick="addItem2('Cheese Burger', 50.00)">Cheese Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger5.PNG" alt="Salad" class="img-fluid" onclick="addItem2('Salad', 30.00)">Salad
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger4.PNG" alt="Sandwich" class="img-fluid" onclick="addItem2('Sandwich', 50.00)">Sandwich
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour2" aria-expanded="false" aria-controls="collapseFour2">
+                      Ice Creams
+                    </button>
+                  </h2>
+                  <div id="collapseFour2" class="accordion-collapse collapse" aria-labelledby="headingFour2" data-bs-parent="#accordionExample2">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/ice1.PNG" alt="Vanilla Ice Cream" class="img-fluid" onclick="addItem2('Vanilla Ice Cream', 80.00)">Vanilla Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice2.PNG" alt="Ice Cream" class="img-fluid" onclick="addItem2('Ice Cream', 80.00)">Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice3.PNG" alt="Strawberry Ice Cream" class="img-fluid" onclick="addItem2('Strawberry Ice Cream', 80.00)">Strawberry Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice4.PNG" alt="Mixed Ice Cream" class="img-fluid" onclick="addItem2('Mixed Ice Cream', 80.00)">Mixed Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice5.PNG" alt="Chocolete Ice Cream" class="img-fluid" onclick="addItem2('Chocolete Ice Cream', 60.00)">Chocolete Ice Cream
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive2" aria-expanded="false" aria-controls="collapseFive2">
+                      Cakes
+                    </button>
+                  </h2>
+                  <div id="collapseFive2" class="accordion-collapse collapse" aria-labelledby="headingFive2" data-bs-parent="#accordionExample2">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/cake1.PNG" alt="Pineapple Cake" class="img-fluid" onclick="addItem2('Pineapple Cake', 250.00)">Pineapple Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake2.GIF" alt="Butter Scrunch Cake" class="img-fluid" onclick="addItem2('Butter Scrunch Cake', 350.00)">Butter Scrunch Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake3.PNG" alt="Chocolete Cake " class="img-fluid" onclick="addItem2('Chocolete Cake', 240.00)">Chocolete Cake 
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake4.PNG" alt="Cup Cake" class="img-fluid" onclick="addItem2('Cup Cake', 120.00)">Cup Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake5.GIF" alt="Dark Chocolete Cake" class="img-fluid" onclick="addItem2('Dark Chocolete Cake', 420.00)">Dark Chocolete Cake
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <!-- Repeat similar modifications for other sections -->
+                </div>
+              </div>
+
+              <!-- Selected Items and Total -->
+              <div class="col-md-11 invoicePart mb-4">
+                <h4 class="text-center mt-4 p-2 invoiceName">Invoice</h4>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th class="action-button">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="billTableBody2"></tbody>
+                </table>
+
+                <h5 class="text-start p-3 total">Total : ₹ &nbsp<span id="totalAmount2"> 0.00</span></h5>
+
+                <button class="btn btn-primary action-btn" onclick="printBill2()">Print</button>
+                <button class="btn btn-danger action-btn" onclick="deleteAllItems2()">Delete All Items</button>
+              </div>
+            <h6 class="endMessage text-center">Thank You... Visit Again...</h6>
+    </div>
+
+
+
+
+
+    <!-- table 4 starts here -->
+    <div class="tab-pane fade" id="pills-table4" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <h5 class="text-center p-4 tableNumber">Table No-4</h5>
+              <div class="col-md-11 itemsTable">
+                <!-- <h4 class="text-center p-2">Our Products</h4> -->
+                <div class="accordion" id="accordionExample3">
+                  <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix3">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix3" aria-expanded="true" aria-controls="collapseSix3">
+                      Coffee
+                    </button>
+                  </h2>
+                  <div id="collapseSix3" class="accordion-collapse collapse show" aria-labelledby="headingSix3" data-bs-parent="#accordionExample3">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/tea1.PNG" alt="Milk Tea" class="img-fluid" onclick="addItem3('Milk Tea', 40.00)">Milk Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea2.PNG" alt="Green Tea" class="img-fluid" onclick="addItem3('Green Tea', 40.00)">Green Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea3.PNG" alt="Coffee" class="img-fluid" onclick="addItem3('Coffee', 50.00)">Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea4.PNG" alt="Printed Coffee" class="img-fluid" onclick="addItem3('Printed Coffee', 70.00)">Printed Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea5.PNG" alt="Cold Coffee" class="img-fluid" onclick="addItem3('Cold Coffee', 80.00)">Cold Coffee
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne3">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne3" aria-expanded="false" aria-controls="collapseOne3">
+                        Pizzas
+                      </button>
+                    </h2>
+                    <div id="collapseOne3" class="accordion-collapse collapse" aria-labelledby="headingOne3" data-bs-parent="#accordionExample3">
+                      <div class="accordion-body">
+                        <div class="row" id="itemList3">
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza4.PNG" alt="Olive Mixed Pizza" class="img-fluid" onclick="addItem3('Olive Mixed Pizza', 80.00)">Olive Mixed Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza5.PNG" alt="Mixed Pizza" class="img-fluid" onclick="addItem3('Mixed Pizza', 70.00)">Mixed Pizza
+                          </div>
+                          <div class="col mb-3 text-center"> 
+                            <img src="photos/pizza1.PNG" alt="Cheese Pizza" class="img-fluid" onclick="addItem3('Cheese Pizza', 100.00)">Cheese Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza9.PNG" alt="Cartoon Pizza" class="img-fluid" onclick="addItem3('Cartoon Pizza', 60.00)">Cartoon Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza3.PNG" alt="Yummy French Pizza" class="img-fluid" onclick="addItem3('Yummy French Pizza', 90.00)">Yummy French Pizza
+                          </div>
+                          <!-- Add more items as needed -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo3">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo3" aria-expanded="false" aria-controls="collapseTwo3">
+                        Cold Drinks
+                      </button>
+                    </h2>
+                    <div id="collapseTwo3" class="accordion-collapse collapse" aria-labelledby="headingTwo3" data-bs-parent="#accordionExample3">
+                      <div class="accordion-body">
+                        <div class="row" id="itemList3">
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold1.PNG" alt="Bisleri Bottle" class="img-fluid" onclick="addItem3('Bisleri Bottle', 15.00)">Bisleri Bottle
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold2.PNG" alt="Sprite" class="img-fluid" onclick="addItem3('Sprite', 20.00)">Sprite
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold3.PNG" alt="Pepsi" class="img-fluid" onclick="addItem3('Pepsi', 20.00)">Pepsi
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold4.PNG" alt="Chocobar" class="img-fluid" onclick="addItem3('Chocobar', 30.00)">Chocobar
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold5.PNG" alt="Orange Juice" class="img-fluid" onclick="addItem3('Orange Juice', 40.00)">Orange Juice
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                      Burger
+                    </button>
+                  </h2>
+                  <div id="collapseThree3" class="accordion-collapse collapse" aria-labelledby="headingThree3" data-bs-parent="#accordionExample3">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/burger1.PNG" alt="Hamburger" class="img-fluid" onclick="addItem3('Hamburger', 40.00)">Hamburger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger2.PNG" alt="Lunch Burger" class="img-fluid" onclick="addItem3('Lunch Burger', 50.00)">Lunch Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger3.PNG" alt="Cheese Burger" class="img-fluid" onclick="addItem3('Cheese Burger', 50.00)">Cheese Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger5.PNG" alt="Salad" class="img-fluid" onclick="addItem3('Salad', 30.00)">Salad
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger4.PNG" alt="Sandwich" class="img-fluid" onclick="addItem3('Sandwich', 50.00)">Sandwich
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour3" aria-expanded="false" aria-controls="collapseFour3">
+                      Ice Creams
+                    </button>
+                  </h2>
+                  <div id="collapseFour3" class="accordion-collapse collapse" aria-labelledby="headingFour3" data-bs-parent="#accordionExample3">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/ice1.PNG" alt="Vanilla Ice Cream" class="img-fluid" onclick="addItem3('Vanilla Ice Cream', 80.00)">Vanilla Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice2.PNG" alt="Ice Cream" class="img-fluid" onclick="addItem3('Ice Cream', 80.00)">Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice3.PNG" alt="Strawberry Ice Cream" class="img-fluid" onclick="addItem3('Strawberry Ice Cream', 80.00)">Strawberry Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice4.PNG" alt="Mixed Ice Cream" class="img-fluid" onclick="addItem3('Mixed Ice Cream', 80.00)">Mixed Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice5.PNG" alt="Chocolete Ice Cream" class="img-fluid" onclick="addItem3('Chocolete Ice Cream', 60.00)">Chocolete Ice Cream
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive3" aria-expanded="false" aria-controls="collapseFive3">
+                      Cakes
+                    </button>
+                  </h2>
+                  <div id="collapseFive3" class="accordion-collapse collapse" aria-labelledby="headingFive3" data-bs-parent="#accordionExample3">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/cake1.PNG" alt="Pineapple Cake" class="img-fluid" onclick="addItem3('Pineapple Cake', 250.00)">Pineapple Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake2.GIF" alt="Butter Scrunch Cake" class="img-fluid" onclick="addItem3('Butter Scrunch Cake', 350.00)">Butter Scrunch Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake3.PNG" alt="Chocolete Cake " class="img-fluid" onclick="addItem3('Chocolete Cake', 240.00)">Chocolete Cake 
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake4.PNG" alt="Cup Cake" class="img-fluid" onclick="addItem3('Cup Cake', 120.00)">Cup Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake5.GIF" alt="Dark Chocolete Cake" class="img-fluid" onclick="addItem3('Dark Chocolete Cake', 420.00)">Dark Chocolete Cake
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <!-- Repeat similar modifications for other sections -->
+                </div>
+              </div>
+
+              <!-- Selected Items and Total -->
+              <div class="col-md-11 invoicePart mb-4">
+                <h4 class="text-center mt-4 p-2 invoiceName">Invoice</h4>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th class="action-button">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="billTableBody3"></tbody>
+                </table>
+
+                <h5 class="text-start p-3 total">Total : ₹ &nbsp<span id="totalAmount3"> 0.00</span></h5>
+
+                <button class="btn btn-primary action-btn" onclick="printBill3()">Print</button>
+                <button class="btn btn-danger action-btn" onclick="deleteAllItems3()">Delete All Items</button>
+              </div>
+            <h6 class="endMessage text-center">Thank You... Visit Again...</h6>
+    </div>
+
+
+
+
+    <!-- tabe 5 starts here -->
+    <div class="tab-pane fade" id="pills-table5" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <h5 class="text-center p-4 tableNumber">Table No-5</h5>
+              <div class="col-md-11 itemsTable">
+                <!-- <h4 class="text-center p-2">Our Products</h4> -->
+                <div class="accordion" id="accordionExample4">
+                  <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix4">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix4" aria-expanded="true" aria-controls="collapseSix4">
+                      Coffee
+                    </button>
+                  </h2>
+                  <div id="collapseSix4" class="accordion-collapse collapse show" aria-labelledby="headingSix4" data-bs-parent="#accordionExample4">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/tea1.PNG" alt="Milk Tea" class="img-fluid" onclick="addItem4('Milk Tea', 40.00)">Milk Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea2.PNG" alt="Green Tea" class="img-fluid" onclick="addItem4('Green Tea', 40.00)">Green Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea3.PNG" alt="Coffee" class="img-fluid" onclick="addItem4('Coffee', 50.00)">Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea4.PNG" alt="Printed Coffee" class="img-fluid" onclick="addItem4('Printed Coffee', 70.00)">Printed Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea5.PNG" alt="Cold Coffee" class="img-fluid" onclick="addItem4('Cold Coffee', 80.00)">Cold Coffee
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne4">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4">
+                        Pizzas
+                      </button>
+                    </h2>
+                    <div id="collapseOne4" class="accordion-collapse collapse" aria-labelledby="headingOne4" data-bs-parent="#accordionExample4">
+                      <div class="accordion-body">
+                        <div class="row" id="itemList4">
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza4.PNG" alt="Olive Mixed Pizza" class="img-fluid" onclick="addItem4('Olive Mixed Pizza', 80.00)">Olive Mixed Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza5.PNG" alt="Mixed Pizza" class="img-fluid" onclick="addItem4('Mixed Pizza', 70.00)">Mixed Pizza
+                          </div>
+                          <div class="col mb-3 text-center"> 
+                            <img src="photos/pizza1.PNG" alt="Cheese Pizza" class="img-fluid" onclick="addItem4('Cheese Pizza', 100.00)">Cheese Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza9.PNG" alt="Cartoon Pizza" class="img-fluid" onclick="addItem4('Cartoon Pizza', 60.00)">Cartoon Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza3.PNG" alt="Yummy French Pizza" class="img-fluid" onclick="addItem4('Yummy French Pizza', 90.00)">Yummy French Pizza
+                          </div>
+                          <!-- Add more items as needed -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo4">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo4" aria-expanded="false" aria-controls="collapseTwo4">
+                        Cold Drinks
+                      </button>
+                    </h2>
+                    <div id="collapseTwo4" class="accordion-collapse collapse" aria-labelledby="headingTwo4" data-bs-parent="#accordionExample4">
+                      <div class="accordion-body">
+                        <div class="row" id="itemList4">
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold1.PNG" alt="Bisleri Bottle" class="img-fluid" onclick="addItem4('Bisleri Bottle', 15.00)">Bisleri Bottle
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold2.PNG" alt="Sprite" class="img-fluid" onclick="addItem4('Sprite', 20.00)">Sprite
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold3.PNG" alt="Pepsi" class="img-fluid" onclick="addItem4('Pepsi', 20.00)">Pepsi
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold4.PNG" alt="Chocobar" class="img-fluid" onclick="addItem4('Chocobar', 30.00)">Chocobar
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold5.PNG" alt="Orange Juice" class="img-fluid" onclick="addItem4('Orange Juice', 40.00)">Orange Juice
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree4" aria-expanded="false" aria-controls="collapseThree4">
+                      Burger
+                    </button>
+                  </h2>
+                  <div id="collapseThree4" class="accordion-collapse collapse" aria-labelledby="headingThree4" data-bs-parent="#accordionExample4">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/burger1.PNG" alt="Hamburger" class="img-fluid" onclick="addItem4('Hamburger', 40.00)">Hamburger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger2.PNG" alt="Lunch Burger" class="img-fluid" onclick="addItem4('Lunch Burger', 50.00)">Lunch Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger3.PNG" alt="Cheese Burger" class="img-fluid" onclick="addItem4('Cheese Burger', 50.00)">Cheese Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger5.PNG" alt="Salad" class="img-fluid" onclick="addItem4('Salad', 30.00)">Salad
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger4.PNG" alt="Sandwich" class="img-fluid" onclick="addItem4('Sandwich', 50.00)">Sandwich
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour4" aria-expanded="false" aria-controls="collapseFour4">
+                      Ice Creams
+                    </button>
+                  </h2>
+                  <div id="collapseFour4" class="accordion-collapse collapse" aria-labelledby="headingFour4" data-bs-parent="#accordionExample4">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/ice1.PNG" alt="Vanilla Ice Cream" class="img-fluid" onclick="addItem4('Vanilla Ice Cream', 80.00)">Vanilla Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice2.PNG" alt="Ice Cream" class="img-fluid" onclick="addItem4('Ice Cream', 80.00)">Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice3.PNG" alt="Strawberry Ice Cream" class="img-fluid" onclick="addItem4('Strawberry Ice Cream', 80.00)">Strawberry Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice4.PNG" alt="Mixed Ice Cream" class="img-fluid" onclick="addItem4('Mixed Ice Cream', 80.00)">Mixed Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice5.PNG" alt="Chocolete Ice Cream" class="img-fluid" onclick="addItem4('Chocolete Ice Cream', 60.00)">Chocolete Ice Cream
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive4" aria-expanded="false" aria-controls="collapseFive4">
+                      Cakes
+                    </button>
+                  </h2>
+                  <div id="collapseFive4" class="accordion-collapse collapse" aria-labelledby="headingFive4" data-bs-parent="#accordionExample4">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/cake1.PNG" alt="Pineapple Cake" class="img-fluid" onclick="addItem4('Pineapple Cake', 250.00)">Pineapple Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake2.GIF" alt="Butter Scrunch Cake" class="img-fluid" onclick="addItem4('Butter Scrunch Cake', 350.00)">Butter Scrunch Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake3.PNG" alt="Chocolete Cake " class="img-fluid" onclick="addItem4('Chocolete Cake', 240.00)">Chocolete Cake 
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake4.PNG" alt="Cup Cake" class="img-fluid" onclick="addItem4('Cup Cake', 120.00)">Cup Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake5.GIF" alt="Dark Chocolete Cake" class="img-fluid" onclick="addItem4('Dark Chocolete Cake', 420.00)">Dark Chocolete Cake
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <!-- Repeat similar modifications for other sections -->
+                </div>
+              </div>
+
+              <!-- Selected Items and Total -->
+              <div class="col-md-11 invoicePart mb-4">
+                <h4 class="text-center mt-4 p-2 invoiceName">Invoice</h4>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th class="action-button">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="billTableBody4"></tbody>
+                </table>
+
+                <h5 class="text-start p-3 total">Total : ₹ &nbsp<span id="totalAmount4"> 0.00</span></h5>
+
+                <button class="btn btn-primary action-btn" onclick="printBill4()">Print</button>
+                <button class="btn btn-danger action-btn" onclick="deleteAllItems4()">Delete All Items</button>
+              </div>
+            <h6 class="endMessage text-center">Thank You... Visit Again...</h6>
+    </div>
+
+
+
+
+
+    <!-- table 6 starts here -->
+    <div class="tab-pane fade" id="pills-table6" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <h5 class="text-center p-4 tableNumber">Table No-6</h5>
+              <div class="col-md-11 itemsTable">
+                <!-- <h4 class="text-center p-2">Our Products</h4> -->
+                <div class="accordion" id="accordionExample5">
+                  <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix5">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix5" aria-expanded="true" aria-controls="collapseSix5">
+                      Coffee
+                    </button>
+                  </h2>
+                  <div id="collapseSix5" class="accordion-collapse collapse show" aria-labelledby="headingSix5" data-bs-parent="#accordionExample5">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/tea1.PNG" alt="Milk Tea" class="img-fluid" onclick="addItem5('Milk Tea', 40.00)">Milk Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea2.PNG" alt="Green Tea" class="img-fluid" onclick="addItem5('Green Tea', 40.00)">Green Tea
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea3.PNG" alt="Coffee" class="img-fluid" onclick="addItem5('Coffee', 50.00)">Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea4.PNG" alt="Printed Coffee" class="img-fluid" onclick="addItem5('Printed Coffee', 70.00)">Printed Coffee
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/tea5.PNG" alt="Cold Coffee" class="img-fluid" onclick="addItem5('Cold Coffee', 80.00)">Cold Coffee
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne5">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5" aria-expanded="true" aria-controls="collapseOne5">
+                        Pizzas
+                      </button>
+                    </h2>
+                    <div id="collapseOne5" class="accordion-collapse collapse" aria-labelledby="headingOne5" data-bs-parent="#accordionExample5">
+                      <div class="accordion-body">
+                        <div class="row" id="itemList5">
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza4.PNG" alt="Olive Mixed Pizza" class="img-fluid" onclick="addItem5('Olive Mixed Pizza', 80.00)">Olive Mixed Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza5.PNG" alt="Mixed Pizza" class="img-fluid" onclick="addItem5('Mixed Pizza', 70.00)">Mixed Pizza
+                          </div>
+                          <div class="col mb-3 text-center"> 
+                            <img src="photos/pizza1.PNG" alt="Cheese Pizza" class="img-fluid" onclick="addItem5('Cheese Pizza', 100.00)">Cheese Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza9.PNG" alt="Cartoon Pizza" class="img-fluid" onclick="addItem5('Cartoon Pizza', 60.00)">Cartoon Pizza
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/pizza3.PNG" alt="Yummy French Pizza" class="img-fluid" onclick="addItem5('Yummy French Pizza', 90.00)">Yummy French Pizza
+                          </div>
+                          <!-- Add more items as needed -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo5">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo5" aria-expanded="false" aria-controls="collapseTwo5">
+                        Cold Drinks
+                      </button>
+                    </h2>
+                    <div id="collapseTwo5" class="accordion-collapse collapse" aria-labelledby="headingTwo5" data-bs-parent="#accordionExample5">
+                      <div class="accordion-body">
+                        <div class="row" id="itemList5">
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold1.PNG" alt="Bisleri Bottle" class="img-fluid" onclick="addItem5('Bisleri Bottle', 15.00)">Bisleri Bottle
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold2.PNG" alt="Sprite" class="img-fluid" onclick="addItem5('Sprite', 20.00)">Sprite
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold3.PNG" alt="Pepsi" class="img-fluid" onclick="addItem5('Pepsi', 20.00)">Pepsi
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold4.PNG" alt="Chocobar" class="img-fluid" onclick="addItem5('Chocobar', 30.00)">Chocobar
+                          </div>
+                          <div class="col mb-3 text-center">
+                            <img src="photos/cold5.PNG" alt="Orange Juice" class="img-fluid" onclick="addItem5('Orange Juice', 40.00)">Orange Juice
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree5" aria-expanded="false" aria-controls="collapseThree5">
+                      Burger
+                    </button>
+                  </h2>
+                  <div id="collapseThree5" class="accordion-collapse collapse" aria-labelledby="headingThree5" data-bs-parent="#accordionExample5">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/burger1.PNG" alt="Hamburger" class="img-fluid" onclick="addItem5('Hamburger', 40.00)">Hamburger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger2.PNG" alt="Lunch Burger" class="img-fluid" onclick="addItem5('Lunch Burger', 50.00)">Lunch Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger3.PNG" alt="Cheese Burger" class="img-fluid" onclick="addItem5('Cheese Burger', 50.00)">Cheese Burger
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger5.PNG" alt="Salad" class="img-fluid" onclick="addItem5('Salad', 30.00)">Salad
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/burger4.PNG" alt="Sandwich" class="img-fluid" onclick="addItem5('Sandwich', 50.00)">Sandwich
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour5" aria-expanded="false" aria-controls="collapseFour5">
+                      Ice Creams
+                    </button>
+                  </h2>
+                  <div id="collapseFour5" class="accordion-collapse collapse" aria-labelledby="headingFour5" data-bs-parent="#accordionExample5">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/ice1.PNG" alt="Vanilla Ice Cream" class="img-fluid" onclick="addItem5('Vanilla Ice Cream', 80.00)">Vanilla Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice2.PNG" alt="Ice Cream" class="img-fluid" onclick="addItem5('Ice Cream', 80.00)">Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice3.PNG" alt="Strawberry Ice Cream" class="img-fluid" onclick="addItem5('Strawberry Ice Cream', 80.00)">Strawberry Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice4.PNG" alt="Mixed Ice Cream" class="img-fluid" onclick="addItem5('Mixed Ice Cream', 80.00)">Mixed Ice Cream
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/ice5.PNG" alt="Chocolete Ice Cream" class="img-fluid" onclick="addItem5('Chocolete Ice Cream', 60.00)">Chocolete Ice Cream
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive5" aria-expanded="false" aria-controls="collapseFive5">
+                      Cakes
+                    </button>
+                  </h2>
+                  <div id="collapseFive5" class="accordion-collapse collapse" aria-labelledby="headingFive5" data-bs-parent="#accordionExample5">
+                    <div class="accordion-body">
+                      <div class="row" id="itemList">
+                          <div class="col mb-3 text-center">
+                          <img src="photos/cake1.PNG" alt="Pineapple Cake" class="img-fluid" onclick="addItem5('Pineapple Cake', 250.00)">Pineapple Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake2.GIF" alt="Butter Scrunch Cake" class="img-fluid" onclick="addItem5('Butter Scrunch Cake', 350.00)">Butter Scrunch Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake3.PNG" alt="Chocolete Cake " class="img-fluid" onclick="addItem5('Chocolete Cake', 240.00)">Chocolete Cake 
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake4.PNG" alt="Cup Cake" class="img-fluid" onclick="addItem5('Cup Cake', 120.00)">Cup Cake
+                        </div>
+                        <div class="col mb-3 text-center">
+                          <img src="photos/cake5.GIF" alt="Dark Chocolete Cake" class="img-fluid" onclick="addItem5('Dark Chocolete Cake', 420.00)">Dark Chocolete Cake
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <!-- Repeat similar modifications for other sections -->
+                </div>
+              </div>
+
+              <!-- Selected Items and Total -->
+              <div class="col-md-11 invoicePart mb-4">
+                <h4 class="text-center mt-4 p-2 invoiceName">Invoice</h4>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th class="action-button">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="billTableBody5"></tbody>
+                </table>
+
+                <h5 class="text-start p-3 total">Total : ₹ &nbsp<span id="totalAmount5"> 0.00</span></h5>
+
+                <button class="btn btn-primary action-btn" onclick="printBill5()">Print</button>
+                <button class="btn btn-danger action-btn" onclick="deleteAllItems5()">Delete All Items</button>
+              </div>
+            <h6 class="endMessage text-center">Thank You... Visit Again...</h6>
+    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="table1.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+  </div>
+</body>
+</html>
